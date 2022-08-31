@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -map|sort -d
+mkdir -p welcome/to/school
