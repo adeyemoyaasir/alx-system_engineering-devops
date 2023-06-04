@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
+# Pings an IP address received as an argument 5 times.
 
-# Check if an argument is provided
-if [[ $# -eq 0 ]]; then
-  echo "Usage: $0 {IP_ADDRESS}"
+if [ $# -eq 0 ]
+then
+  echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 else
-  # Ping the IP address 5 times
-  for ((i=1; i<=5; i++)); do
-    ping -c 1 "$1" >/dev/null 2>&1
-    if [[ $? -eq 0 ]]; then
-      echo "Ping $i: $1 is reachable"
-    else
-      echo "Ping $i: $1 is unreachable"
-    fi
-  done
+  ping -c 5 "$1"
 fi
